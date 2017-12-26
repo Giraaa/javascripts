@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   def create
     board = Board.create(
       title: params[:title],
-      content: params[:contents]
+      contents: params[:contents]
       )
       redirect_to "/boards/#{board.id}"
 
@@ -20,7 +20,7 @@ class BoardsController < ApplicationController
     #params[:id] = 숫자만 넘어감
   end
   def update
-    @board = Board.find(params=[:id])
+    @board = Board.find(params[:id])
     @board.update(
       title: params[:title],
       contents: params[:contents]

@@ -16,5 +16,5 @@ Rails.application.routes.draw do
 
   # D - destroy
 
-  delete '/boards/:id' => 'board#destroy'
+  delete '/boards/:id' => 'boards#destroy'
 end
