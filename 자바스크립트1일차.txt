@@ -1,0 +1,31 @@
+CRUD 만들기
+
+CRUD
+
+
+board, user, comment
+
+controller boards sessions
+
+jQuery 기본
+
+css Selector
+
+jQuery
+
+
+
+
+has_many :boards #보드들을 가진다
+
+belongs_to :user #유저에 속해있는다
+
+다대다라고 하더라도 둘다 명시를 해야함
+
+
+같은 url이라도 요청방식이 다르다면 다르게 사용가능함
+
+post 생성
+get 조회
+put 수정
+delete 삭제

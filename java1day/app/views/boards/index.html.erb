@@ -1,0 +1,26 @@
+<h1>여기는 INDEX 입니다.</h1>
+<table>
+  <thead>
+    <tr>
+      <th>글번호</th>
+      <th>제목</th>
+      <th>보기</th>
+      <th>수정</th>
+      <th>삭제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @boards.each do |board| %>
+    <tr>
+      <th><%= board.id %></th>
+      <th><%= board.title %></th>
+      <th><a href="/boards/<%=board.id%>">보기</a></th>
+      <th><a href="/boards/<%=board.id%>/edit">수정</a></th>
+      <th><a href="/boards/<%=board.id%>" data-method="delete" data-confirm="삭제할꼬얌?">삭제</a>></th>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+<a href="/boards/new">새글쓰기</a>

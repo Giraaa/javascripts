@@ -1,0 +1,76 @@
+doc = {
+	_open: "hello"
+	_close: "bye"
+         }
+
+약속아닌약속
+
+언디파인드는 리턴값이 없다는뜼
+
+문자+숫자를 더하면 자동으로 숫자로 변환이됨
+숫자를 문자로 바꿔줄 경우에는 str을 붙인 다음에는
+.toString();을 붙임
+문자,숫자,참/거짓, 객체, undefind
+
+var는 변수를 선언하는것
+
+반복문
+for(var i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+
+
+
+var arr = new Array();   배열
+
+함수를 실행시키기위해서는 반드시 괄호를 열고 닫아놔야함
+그냥 함수명만적으면 함수자체가나옴
+
+방법1. funtion (함수명) {실행문}
+함수가 실행되기전에 사용을 해도 오류가 나지않음
+스크립트 안에서 먼저선언을 안해도 사용가능함
+방법2. var 함수명 = funtion(){실행문}
+함수가 실행되기전에 사용하면 오류가 남
+스크립트 안에서 먼저선언을 안해도 사용불가
+
+
+history.back();뒤로가기
+location.href="http://naver.com"; (네이버)로 가시오
+
+
+location.relpace("http://naver.com"); 매게변수로 주는것
+
+
+
+window 브라우저 최상위 객체
+document 서버로부터 날아온 html문서
+location 주소창
+console 에러 보는창, 연습하는창
+
+document.getElementById('id'); => id selector를 가지고 html 요소를 가지고온다
+document.getElementsByClassName('class'); => class selcetor를가지고 html요소'들'을 가지고 온다
+document.getElementsByTagName('tag'); => tag selcetor를가지고 html요소'들'을 가지고 온다
+document.querySelectorAll('css selector'); => css selector를 가지고 html요소'들'을 가지고 온다
+
+
+for(var i = 0; i < doc.length; i++) {
+    doc[i].innerHTML = "멀티캠퍼스";}
+전부 바뀜 멀티캠퍼스로
+하지만 내용은 바뀌지않음 메소드명만 바뀜
+
+var doc2 = document.querySelectorAll('a.tnb_link');
+
+
+for(var i = 0; i < doc2.length; i++) {
+    doc2[i].text = "멀티캠퍼쓰";
+}
+
+앞에있는 파란글자까지바뀜
+
+var doc = document.getElementsByClassName('tnb_text');
+
+뒤에있는거 네개만 담김
+
+
+class를 지우거나 추가할떄 어떤것을 선택했는지를 확인해야함
