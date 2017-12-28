@@ -1,0 +1,54 @@
+<h1><%=@board.title%></h1>
+<p><%=@board.contents%></p>
+<button type="button" class ="btn btn-info fa-spin" id="like">
+  <i class="fas fa-american-sign-language-interpreting fa-3x fa-spin "></i> I likeeeeee it!!!!(<span id="like-counter">0</span>)
+</button>
+<!-- <a href="/" class ="like"></a> -->
+<br />
+
+<a href="/">home</a>
+<script>
+$(function(){
+
+  // 1. 좋아요 버튼을 클릭하면
+    // 2. 버튼의 색깔을 빨강으로 바꾸고
+    // 3. 좋아요 카운트를 1 증가시킨다.
+    $('#like').on('click',function(){
+        $.ajax({
+          url: '/boards/<%=@board.id%>/like',
+          method: 'POST'
+        });
+
+    console.log(this.classList.contains('btn-info')); //javascript에 있는애 classList
+    // if $(this).attr("calss")=="btn-info"
+    if (this.classList.contains('btn-info')){
+
+    // $(this).addClass('btn-danger').removeClass('btn-info');
+    // console.log($(this).attr("class"));
+    // console.log(parseInt($('#like-counter').html())+1);
+    $('#like-counter').html(parseInt($('#like-counter').html())+1);
+    // $('#like-counter').text(parseInt($('#like-counter').html())+1);
+    }
+    else{
+      // $(this).addClass('btn-info').removeClass('btn-danger');
+      // console.log("btn-info");
+      $('#like-counter').html(parseInt($('#like-counter').html())-1);
+    }
+
+    $(this).toggleClass('btn-danger').toggleClass('btn-info');
+    // $("셀렉터").html()
+    // 셀렉터태그내에 존재하는 자식태그을 통째로 읽어올때 사용되는 함수
+    // ※ 태그 동적추가할때 주로 사용되는 함수
+    //
+    // $("셀렉터").text()
+    // 셀렉터태그내에 존재하는 자식태그들 중에 html태그는 모두 제외 한 채 문자열만 출력하고자 할때 사용되는 함수
+    // ※ html태그까지 모두 문자로 인식시켜주는 함수
+
+
+  })
+})
+  // 4.빨간색으로 변한 버튼을 누르면
+  // 5. 다시 파랑으로 바꾸고
+  // 6. 좋아요 카운트를 1 감소시킨다.
+
+</script>
